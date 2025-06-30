@@ -44,7 +44,8 @@ export default function AudioRecorder({ onTranscribe }) {
       const formData = new FormData();
       formData.append("audio", audioBlob, "grabacion.webm");
 
-      const res = await fetch("https://noteupapp.vercel.app/api/transcribe", {
+      const base = import.meta.env.VITE_API_BASE_URL || "";
+      const res = await fetch(`${base}/api/transcribe`, {
         method: "POST",
         body: formData
       });

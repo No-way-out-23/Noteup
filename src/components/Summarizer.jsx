@@ -8,7 +8,7 @@ export default function Summarizer({ text }) {
   const summarize = async () => {
     setLoading(true); setError(""); setSummary("");
     try {
-      const res = await fetch("/api/summarize", {
+      const res = await fetch("https://noteupapp.vercel.app/api/summarize", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text })

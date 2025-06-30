@@ -13,7 +13,7 @@ export default function Translator({ text }) {
   const translate = async () => {
     setLoading(true); setError(""); setTranslated("");
     try {
-      const base = import.meta.env.VITE_API_BASE_URL || "";
+      const base = import.meta.env.VITE_API_BASE_URL || "https://noteupapp.vercel.app";
       const res = await fetch(`${base}/api/translate`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

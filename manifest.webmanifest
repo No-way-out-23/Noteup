@@ -1,7 +1,7 @@
 {
   "name": "NoteUp",
   "short_name": "NoteUp",
-  "start_url": ".",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#003569",
   "theme_color": "#003569",

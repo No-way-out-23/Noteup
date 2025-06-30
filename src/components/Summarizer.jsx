@@ -8,7 +8,7 @@ export default function Summarizer({ text }) {
   const summarize = async () => {
     setLoading(true); setError(""); setSummary("");
     try {
-      const base = import.meta.env.VITE_API_BASE_URL || "";
+      const base = import.meta.env.VITE_API_BASE_URL || "https://noteupapp.vercel.app";
       const res = await fetch(`${base}/api/summarize`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

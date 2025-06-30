@@ -30,7 +30,12 @@ export default function AudioRecorder({ onTranscribe }) {
   };
 
   const stopRecording = () => {
-    mediaRecorder.current?.stop();
+    if (mediaRecorder.current) {
+      mediaRecorder.current.stop();
+      mediaRecorder.current.stream
+        .getTracks()
+        .forEach(track => track.stop());
+    }
     setRecording(false);
   };
 
